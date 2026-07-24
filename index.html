@@ -196,13 +196,53 @@
       <p class="section-label">04 / WORK PLAN</p>
       <div class="section-content">
         <div class="section-heading-row"><h2>Delivery roadmap</h2><p>Evidence-based sequencing, from discovery to stable ownership.</p></div>
-        <div class="phase-list">
-          <article class="phase"><span class="phase-number">01</span><h3>Discovery & alignment</h3><div><small>Purpose</small><p>Confirm scope, decision rights, business rules, services, dependencies, risks, and open questions.</p></div><div><small>Exit evidence</small><p>Approved scope, maps, logs, initial backlog, architecture view, and ROM estimate.</p></div></article>
-          <article class="phase"><span class="phase-number">02</span><h3>Vertical slice</h3><div><small>Purpose</small><p>Refine the highest-value journey and prove one thin end-to-end flow using existing services.</p></div><div><small>Exit evidence</small><p>Working directory-to-profile or contact flow with analytics and test evidence.</p></div></article>
-          <article class="phase"><span class="phase-number">03</span><h3>Core directory</h3><div><small>Purpose</small><p>Deliver context, eligible results, cards, sorting, pagination, and empty/error behavior.</p></div><div><small>Exit evidence</small><p>Accepted core stories, regression coverage, and updated operational documentation.</p></div></article>
-          <article class="phase"><span class="phase-number">04</span><h3>Engagement</h3><div><small>Purpose</small><p>Add approved profile navigation, saving, contact actions, and related content.</p></div><div><small>Exit evidence</small><p>Accepted engagement stories and validated integrations.</p></div></article>
-          <article class="phase"><span class="phase-number">05</span><h3>Trust & readiness</h3><div><small>Purpose</small><p>Confirm disclosures, ratings, accessibility, SEO, privacy, security, performance, monitoring, and rollback.</p></div><div><small>Exit evidence</small><p>Production-readiness review with documented go/no-go evidence.</p></div></article>
-          <article class="phase"><span class="phase-number">06</span><h3>Controlled launch</h3><div><small>Purpose</small><p>Release progressively, compare guardrails with baselines, resolve issues, and capture learning.</p></div><div><small>Exit evidence</small><p>Stable production behavior, hypercare exit, ownership transition, and follow-up backlog.</p></div></article>
+        <div class="roadmap-layout">
+          <ol class="roadmap-visual" aria-label="Six delivery phases">
+            <li><span>01</span><p>Discovery &amp; alignment</p></li>
+            <li><span>02</span><p>Vertical slice</p></li>
+            <li><span>03</span><p>Core directory</p></li>
+            <li><span>04</span><p>Engagement</p></li>
+            <li><span>05</span><p>Trust &amp; readiness</p></li>
+            <li><span>06</span><p>Controlled launch</p></li>
+          </ol>
+          <div class="phase-list">
+            <article class="phase">
+              <span class="phase-number">01</span><h3>Discovery &amp; alignment</h3>
+              <div><small>Purpose</small><p>Confirm scope, decision rights, business rules, services, dependencies, risks, and open questions.</p></div>
+              <div><small>Exit evidence</small><p>Approved scope, maps, logs, initial backlog, architecture view, and ROM estimate.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-01</span><span>US-02</span><span>US-03</span><span>US-04</span><span>US-05</span><span>US-06</span><span>US-07</span><span>US-08</span><span>US-09</span><span>US-10</span><span>US-11</span></div><p>All stories are reviewed to confirm scope, business rules, dependencies, open questions, and delivery priority.</p></div>
+            </article>
+            <article class="phase">
+              <span class="phase-number">02</span><h3>Vertical slice</h3>
+              <div><small>Purpose</small><p>Refine the highest-value journey and prove one thin end-to-end flow using existing services.</p></div>
+              <div><small>Exit evidence</small><p>Working directory-to-profile or contact flow with analytics and test evidence.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-01</span><span>US-04</span><span>US-06</span></div><p>These stories provide the first end-to-end directory-to-profile journey.</p></div>
+            </article>
+            <article class="phase">
+              <span class="phase-number">03</span><h3>Core directory</h3>
+              <div><small>Purpose</small><p>Deliver context, eligible results, cards, sorting, pagination, and empty/error behavior.</p></div>
+              <div><small>Exit evidence</small><p>Accepted core stories, regression coverage, and updated operational documentation.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-01</span><span>US-02</span><span>US-03</span><span>US-04</span><span>US-10</span></div><p>These stories establish the core discovery and comparison experience.</p></div>
+            </article>
+            <article class="phase">
+              <span class="phase-number">04</span><h3>Engagement</h3>
+              <div><small>Purpose</small><p>Add approved profile navigation, saving, contact actions, and related content.</p></div>
+              <div><small>Exit evidence</small><p>Accepted engagement stories and validated integrations.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-06</span><span>US-07</span><span>US-08</span><span>US-11</span></div><p>These stories add the approved actions available after a consumer identifies a relevant lawyer.</p></div>
+            </article>
+            <article class="phase">
+              <span class="phase-number">05</span><h3>Trust &amp; readiness</h3>
+              <div><small>Purpose</small><p>Confirm disclosures, ratings, accessibility, SEO, privacy, security, performance, monitoring, and rollback.</p></div>
+              <div><small>Exit evidence</small><p>Production-readiness review with documented go/no-go evidence.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-05</span><span>US-09</span><span>US-01–US-11 validation</span></div><p>Trust-related stories are completed while the full experience is validated against the agreed production-readiness criteria.</p></div>
+            </article>
+            <article class="phase">
+              <span class="phase-number">06</span><h3>Controlled launch</h3>
+              <div><small>Purpose</small><p>Release progressively, compare guardrails with baselines, resolve issues, and capture learning.</p></div>
+              <div><small>Exit evidence</small><p>Stable production behavior, hypercare exit, ownership transition, and follow-up backlog.</p></div>
+              <div class="phase-focus"><small>User Stories in focus</small><div class="us-tags"><span>US-01</span><span>US-02</span><span>US-03</span><span>US-04</span><span>US-05</span><span>US-06</span><span>US-07</span><span>US-08</span><span>US-09</span><span>US-10</span><span>US-11</span></div><p>The approved experience is progressively released, monitored, stabilized, and transitioned to its operational owners.</p></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
