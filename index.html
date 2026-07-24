@@ -45,10 +45,10 @@
     <section class="section-grid">
       <p class="section-label">01 / APPROACH</p>
       <div class="section-content split-copy">
-        <h2>Plan what can be observed.<br>Validate what cannot.</h2>
+        <h2>Translate observed functionality into User Stories.</h2>
         <div>
-          <p>The assignment decomposes a reusable location and practice-area directory page. It does not attempt to reproduce Avvo or infer its proprietary architecture, ranking logic, or commercial model.</p>
-          <p>Every story separates visible evidence from the minimum functional behavior, the open business decision, and the likely service dependency.</p>
+          <p>The approach is to identify the functionality observed on the reference page and translate it into User Stories that describe the consumer need, the expected page behavior, the clarification questions, and the dependencies that must be confirmed before implementation.</p>
+          <p>This decomposition creates a structured use case for planning and delivery without assuming Avvo’s internal business rules, systems, or proprietary logic.</p>
         </div>
       </div>
     </section>
@@ -80,47 +80,113 @@
         <div class="story-list">
           <details class="story">
             <summary><span class="story-number">US-01</span><span class="story-title">Understand the directory context</span><span class="story-owner">Product + Data</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Confirm the practice area and location before comparing lawyers.</p></div><div><small>Observed on the page</small><p>Breadcrumbs, location/practice heading, lawyer count, review count, and supporting copy.</p></div><div><small>Minimum delivery behavior</small><p>Keep the navigation path, heading, counts, and result set aligned.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to understand the practice area and location represented by the page so that I can confirm that I am reviewing relevant lawyers.</p>
+              <div><small>Observed</small><p>The page displays breadcrumbs, a location/practice-area heading, result volume, review volume, and explanatory text.</p></div>
+              <div><small>Requirement</small><p>The displayed context must remain consistent across the breadcrumb, heading, count summary, and result set. Dynamic counts must not be hard-coded.</p></div>
+              <div><small>Clarification questions</small><p>Which profiles are included in the lawyer and review counts? Are counts real-time or periodically updated? What does it mean for a lawyer to “serve” a city?</p></div>
+              <div><small>Dependency / scope note</small><p>The eligibility and counting rules require Product and data-owner confirmation.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-02</span><span class="story-title">Resolve legal need and location</span><span class="story-owner">Product + Search</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Reach the correct directory results from a legal need and location.</p></div><div><small>Observed on the page</small><p>Global lawyer discovery, location navigation, practice-area navigation, and search entry point.</p></div><div><small>Minimum delivery behavior</small><p>Resolve valid context and provide recoverable invalid, ambiguous, and empty states.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to search by legal need and location so that I can reach the appropriate directory results.</p>
+              <div><small>Observed</small><p>Global navigation exposes lawyer discovery by location and practice area, along with a search entry point.</p></div>
+              <div><small>Requirement</small><p>The page must receive or resolve a valid practice-area and location context, display the corresponding results, and provide a recoverable response for invalid, ambiguous, or empty searches.</p></div>
+              <div><small>Clarification questions</small><p>Is global search part of this project? Which location formats are supported? How are ambiguous locations and spelling errors handled? What should happen when no lawyers are available?</p></div>
+              <div><small>Dependency / scope note</small><p>Language, distance, availability, and other filters are not included unless Product confirms them.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-03</span><span class="story-title">Sort directory results</span><span class="story-owner">Product + Search</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Evaluate the eligible result set using a preferred ordering.</p></div><div><small>Observed on the page</small><p>Best Match, Best Reviewed, Most Reviewed, and years-licensed options.</p></div><div><small>Minimum delivery behavior</small><p>Preserve context and pagination while applying stable, Product-approved sorting.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to sort lawyer results using the available options so that I can evaluate them according to my preferred criteria.</p>
+              <div><small>Observed</small><p>The page provides Best Match, Best Reviewed, Most Reviewed, and years-licensed sorting options.</p></div>
+              <div><small>Requirement</small><p>Selecting a sort option must reorder the current eligible result set, preserve the search context, use a stable tie-breaker, and remain consistent across pagination.</p></div>
+              <div><small>Clarification questions</small><p>How is each option defined? Is there a minimum review threshold? How are ties resolved? Should sort state be represented in the URL?</p></div>
+              <div><small>Dependency / scope note</small><p>Product owns the ranking policy. The delivery team should not invent the Best Match algorithm.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-04</span><span class="story-title">Compare lawyer summary cards</span><span class="story-owner">UX + Profile Data</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Identify which profiles are worth reviewing in more detail.</p></div><div><small>Observed on the page</small><p>Name, image, firm, address, tenure, practice areas, biography, ratings, reviews, and actions.</p></div><div><small>Minimum delivery behavior</small><p>Use a consistent hierarchy, support missing fields, and connect every action to the right profile.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to compare consistent summary information for each lawyer so that I can identify profiles worth reviewing.</p>
+              <div><small>Observed</small><p>Cards show combinations of name, image, firm, address, licensing tenure, practice areas, biography or tagline, ratings, reviews, and actions.</p></div>
+              <div><small>Requirement</small><p>Cards must use a consistent information hierarchy, handle missing optional fields, distinguish the review score from the Avvo Rating, and link every action to the correct lawyer.</p></div>
+              <div><small>Clarification questions</small><p>Which fields are mandatory? How should missing images or biographies appear? Which office is shown for lawyers with multiple locations? What are the truncation rules?</p></div>
+              <div><small>Dependency / scope note</small><p>Detailed profile content and data-authoring workflows are adjacent dependencies unless explicitly included.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-05</span><span class="story-title">Recognize promoted listings</span><span class="story-owner">Product + Legal</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Distinguish promoted placement from standard directory results.</p></div><div><small>Observed on the page</small><p>PRO indicators and explicit Ad labels within the results.</p></div><div><small>Minimum delivery behavior</small><p>Apply approved eligibility and disclosure rules without inventing the commercial model.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want promoted listings to be clearly identified so that I can distinguish them from standard directory results.</p>
+              <div><small>Observed</small><p>The reference page includes PRO indicators and explicit Ad labeling.</p></div>
+              <div><small>Requirement</small><p>Any commercially influenced placement must use an approved disclosure and must not make the user believe it is an undisclosed organic recommendation.</p></div>
+              <div><small>Clarification questions</small><p>Do PRO and Ad represent the same status? Which placements require disclosure? Must promoted lawyers satisfy the same location and practice eligibility rules?</p></div>
+              <div><small>Dependency / scope note</small><p>The commercial model, campaign tooling, pricing, billing, and auction behavior are outside the page requirement until confirmed.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-06</span><span class="story-title">Open a lawyer profile</span><span class="story-owner">Profile Platform</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Review more information before deciding to make contact.</p></div><div><small>Observed on the page</small><p>Linked lawyer names, images, Profile, and View Profile actions.</p></div><div><small>Minimum delivery behavior</small><p>Open the correct profile, preserve a return path, and record navigation analytics.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to open a lawyer’s full profile so that I can review more information before making contact.</p>
+              <div><small>Observed</small><p>Lawyer names, images, and Profile or View Profile actions navigate to detailed profiles.</p></div>
+              <div><small>Requirement</small><p>Every profile action must open the correct lawyer, preserve a usable return path, and generate the approved navigation event for measurement.</p></div>
+              <div><small>Clarification questions</small><p>Which card elements are clickable? Must search, page, and sort state be restored when the user returns? Is the detailed profile itself in scope?</p></div>
+              <div><small>Dependency / scope note</small><p>The directory page may depend on an existing profile experience rather than rebuilding it.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-07</span><span class="story-title">Contact a lawyer</span><span class="story-owner">Contact Platform</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Request assistance through an available contact option.</p></div><div><small>Observed on the page</small><p>Call, Chat, Message, and external website actions that vary by profile.</p></div><div><small>Minimum delivery behavior</small><p>Show only approved actions, route correctly, communicate status, and record attribution.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to use the available contact options so that I can request assistance from a selected lawyer.</p>
+              <div><small>Observed</small><p>Cards may include call, chat, message, and external website actions. Not every card shows the same actions.</p></div>
+              <div><small>Requirement</small><p>Only available and approved actions must be displayed. Each action must target the selected lawyer, provide a clear success or failure state, and produce the approved attribution event.</p></div>
+              <div><small>Clarification questions</small><p>Are displayed phone numbers direct or trackable? Are Chat and Message different flows? Which fields and consent are required? How is delivery success defined? What is a qualified contact?</p></div>
+              <div><small>Dependency / scope note</small><p>CRM, SMS, call tracking, routing, and notification services are integrations to confirm—not assumed components to rebuild.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-08</span><span class="story-title">Save a lawyer</span><span class="story-owner">Identity + Accounts</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Return to a selected lawyer later.</p></div><div><small>Observed on the page</small><p>A Save action appears on lawyer cards.</p></div><div><small>Minimum delivery behavior</small><p>Make saving repeat-safe, visible, removable, and consistent with the in-scope account experience.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to save a lawyer so that I can return to the profile later.</p>
+              <div><small>Observed</small><p>A Save action is displayed on lawyer cards.</p></div>
+              <div><small>Requirement</small><p>Saving must be idempotent, show the current state, and allow removal. The state should be consistent between the directory and any in-scope saved/profile experience.</p></div>
+              <div><small>Clarification questions</small><p>Does saving require authentication? Is anonymous saving supported? Where are saved lawyers viewed? Must the state synchronize across devices?</p></div>
+              <div><small>Dependency / scope note</small><p>Account management and a saved-items destination may be existing dependencies.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-09</span><span class="story-title">Understand ratings and reviews</span><span class="story-owner">Reviews + Content</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Use other consumers' experiences as one input in the decision.</p></div><div><small>Observed on the page</small><p>Review scores, counts, empty states, review links, Avvo Rating, and rating explanations.</p></div><div><small>Minimum delivery behavior</small><p>Keep values consistent and clearly separate review score from Avvo Rating.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to see available ratings and reviews so that I can consider other users’ experiences.</p>
+              <div><small>Observed</small><p>Cards show review scores, review counts, Not yet reviewed states, review links, Avvo Rating values, and rating explanations.</p></div>
+              <div><small>Requirement</small><p>Published values must be internally consistent; empty-review states must be clear; review score and Avvo Rating must not be presented as the same measure.</p></div>
+              <div><small>Clarification questions</small><p>Is review submission in scope or only review display? How are scores calculated? Which moderation states affect counts? Can lawyers respond? Who approves rating explanations?</p></div>
+              <div><small>Dependency / scope note</small><p>Review collection, moderation, disputes, and appeals should be treated as existing or separately scoped capabilities until confirmed.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-10</span><span class="story-title">Navigate multiple result pages</span><span class="story-owner">Search + SEO</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Evaluate more lawyers without losing the current search context.</p></div><div><small>Observed on the page</small><p>Numbered pagination, final-page access, and next-page navigation.</p></div><div><small>Minimum delivery behavior</small><p>Preserve location, practice, and sort state while avoiding duplicates in a stable result set.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to move between result pages without losing my search context so that I can evaluate additional lawyers.</p>
+              <div><small>Observed</small><p>The page exposes numbered pagination and next-page navigation.</p></div>
+              <div><small>Requirement</small><p>Pagination must preserve location, practice area, and sort state; avoid duplicate results within a stable dataset; provide valid previous/next behavior; and support keyboard and assistive technology.</p></div>
+              <div><small>Clarification questions</small><p>What is the page size? Is there a maximum page? How are data changes handled during navigation? What is the SEO policy for subsequent pages?</p></div>
+              <div><small>Dependency / scope note</small><p>Pagination behavior depends on the retrieval service and approved SEO approach.</p></div>
+            </div>
           </details>
           <details class="story">
             <summary><span class="story-number">US-11</span><span class="story-title">Continue through related content</span><span class="story-owner">Content + SEO</span><span class="story-toggle">+</span></summary>
-            <div class="story-detail"><div><small>User outcome</small><p>Continue the search when the current results do not fully meet the need.</p></div><div><small>Observed on the page</small><p>Nearby cities, related practice areas, resources, transparency content, and attorney insights.</p></div><div><small>Minimum delivery behavior</small><p>Provide valid, relevant destinations that remain distinct from the primary results.</p></div></div>
+            <div class="story-detail">
+              <p class="story-statement">As a legal consumer, I want to see related locations, practice areas, and resources so that I can continue my search when the current page does not meet my needs.</p>
+              <div><small>Observed</small><p>The page includes nearby cities, related practice areas, additional resources, transparency content, and attorney insight lists.</p></div>
+              <div><small>Requirement</small><p>Related destinations must be valid, relevant, non-duplicative, and clearly separated from the primary lawyer results.</p></div>
+              <div><small>Clarification questions</small><p>How are nearby cities and related practice areas selected? Which modules are required for the MVP? Are Attorney Insights generated or curated? Which destinations should be indexable?</p></div>
+              <div><small>Dependency / scope note</small><p>Content governance and recommendation logic require Product, Content, and SEO confirmation.</p></div>
+            </div>
           </details>
         </div>
       </div>
