@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TPM case study: functional decomposition and delivery plan for a legal directory experience.">
+  <title>TPM Case Study | Rafael Gallardo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- The page uses semantic landmarks and native details elements so it remains accessible without JavaScript. -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Return to the top">
+      <span>Rafael Gallardo</span>
+      <small>Technical Project Manager</small>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#stories">User Stories</a>
+      <a href="#plan">Work Plan</a>
+      <a href="#readiness">Readiness</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <p class="eyebrow">TPM CASE STUDY / DIRECTORY EXPERIENCE</p>
+      <h1>From an observable page to a delivery-ready program.</h1>
+      <p class="hero-copy">
+        A functional decomposition of a legal directory experience, translated
+        into user outcomes, business-rule questions, dependencies, and a
+        controlled delivery plan.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-action" href="#stories">Explore the decomposition <span>↘</span></a>
+        <a class="text-action" href="#plan">View delivery plan ↗</a>
+      </div>
+      <div class="hero-meta" aria-label="Case study summary">
+        <div><strong>11</strong><span>User stories</span></div>
+        <div><strong>06</strong><span>Delivery phases</span></div>
+        <div><strong>05</strong><span>Key assumptions</span></div>
+        <div><strong>01</strong><span>Reference journey</span></div>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <p class="section-label">01 / APPROACH</p>
+      <div class="section-content split-copy">
+        <h2>Plan what can be observed.<br>Validate what cannot.</h2>
+        <div>
+          <p>The assignment decomposes a reusable location and practice-area directory page. It does not attempt to reproduce Avvo or infer its proprietary architecture, ranking logic, or commercial model.</p>
+          <p>Every story separates visible evidence from the minimum functional behavior, the open business decision, and the likely service dependency.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-grid" id="assumptions">
+      <p class="section-label">02 / ASSUMPTIONS</p>
+      <div class="section-content">
+        <div class="section-heading-row">
+          <h2>Working assumptions</h2>
+          <p>Planning hypotheses — not unvalidated product policy.</p>
+        </div>
+        <ol class="assumption-list">
+          <li><span>01</span><p>Only eligible professionals appear, based on confirmed profile, practice, location, and compliance rules.</p></li>
+          <li><span>02</span><p>Location and practice area define the main result set; fallback and no-result behavior require validation.</p></li>
+          <li><span>03</span><p>Existing services provide profile data, ratings, reviews, ranking, and contact options.</p></li>
+          <li><span>04</span><p>Organic and sponsored results can coexist under approved eligibility, placement, and disclosure rules.</p></li>
+          <li><span>05</span><p>Product approves policy; the TPM/Scrum Master coordinates decisions, dependencies, and delivery impact.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-grid" id="stories">
+      <p class="section-label">03 / USER STORIES</p>
+      <div class="section-content">
+        <div class="section-heading-row">
+          <h2>Page decomposition</h2>
+          <p>Observed evidence → consumer outcome → delivery responsibility</p>
+        </div>
+        <div class="story-list">
+          <details class="story">
+            <summary><span class="story-number">US-01</span><span class="story-title">Understand the directory context</span><span class="story-owner">Product + Data</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Confirm the practice area and location before comparing lawyers.</p></div><div><small>Observed on the page</small><p>Breadcrumbs, location/practice heading, lawyer count, review count, and supporting copy.</p></div><div><small>Minimum delivery behavior</small><p>Keep the navigation path, heading, counts, and result set aligned.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-02</span><span class="story-title">Resolve legal need and location</span><span class="story-owner">Product + Search</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Reach the correct directory results from a legal need and location.</p></div><div><small>Observed on the page</small><p>Global lawyer discovery, location navigation, practice-area navigation, and search entry point.</p></div><div><small>Minimum delivery behavior</small><p>Resolve valid context and provide recoverable invalid, ambiguous, and empty states.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-03</span><span class="story-title">Sort directory results</span><span class="story-owner">Product + Search</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Evaluate the eligible result set using a preferred ordering.</p></div><div><small>Observed on the page</small><p>Best Match, Best Reviewed, Most Reviewed, and years-licensed options.</p></div><div><small>Minimum delivery behavior</small><p>Preserve context and pagination while applying stable, Product-approved sorting.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-04</span><span class="story-title">Compare lawyer summary cards</span><span class="story-owner">UX + Profile Data</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Identify which profiles are worth reviewing in more detail.</p></div><div><small>Observed on the page</small><p>Name, image, firm, address, tenure, practice areas, biography, ratings, reviews, and actions.</p></div><div><small>Minimum delivery behavior</small><p>Use a consistent hierarchy, support missing fields, and connect every action to the right profile.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-05</span><span class="story-title">Recognize promoted listings</span><span class="story-owner">Product + Legal</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Distinguish promoted placement from standard directory results.</p></div><div><small>Observed on the page</small><p>PRO indicators and explicit Ad labels within the results.</p></div><div><small>Minimum delivery behavior</small><p>Apply approved eligibility and disclosure rules without inventing the commercial model.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-06</span><span class="story-title">Open a lawyer profile</span><span class="story-owner">Profile Platform</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Review more information before deciding to make contact.</p></div><div><small>Observed on the page</small><p>Linked lawyer names, images, Profile, and View Profile actions.</p></div><div><small>Minimum delivery behavior</small><p>Open the correct profile, preserve a return path, and record navigation analytics.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-07</span><span class="story-title">Contact a lawyer</span><span class="story-owner">Contact Platform</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Request assistance through an available contact option.</p></div><div><small>Observed on the page</small><p>Call, Chat, Message, and external website actions that vary by profile.</p></div><div><small>Minimum delivery behavior</small><p>Show only approved actions, route correctly, communicate status, and record attribution.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-08</span><span class="story-title">Save a lawyer</span><span class="story-owner">Identity + Accounts</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Return to a selected lawyer later.</p></div><div><small>Observed on the page</small><p>A Save action appears on lawyer cards.</p></div><div><small>Minimum delivery behavior</small><p>Make saving repeat-safe, visible, removable, and consistent with the in-scope account experience.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-09</span><span class="story-title">Understand ratings and reviews</span><span class="story-owner">Reviews + Content</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Use other consumers' experiences as one input in the decision.</p></div><div><small>Observed on the page</small><p>Review scores, counts, empty states, review links, Avvo Rating, and rating explanations.</p></div><div><small>Minimum delivery behavior</small><p>Keep values consistent and clearly separate review score from Avvo Rating.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-10</span><span class="story-title">Navigate multiple result pages</span><span class="story-owner">Search + SEO</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Evaluate more lawyers without losing the current search context.</p></div><div><small>Observed on the page</small><p>Numbered pagination, final-page access, and next-page navigation.</p></div><div><small>Minimum delivery behavior</small><p>Preserve location, practice, and sort state while avoiding duplicates in a stable result set.</p></div></div>
+          </details>
+          <details class="story">
+            <summary><span class="story-number">US-11</span><span class="story-title">Continue through related content</span><span class="story-owner">Content + SEO</span><span class="story-toggle">+</span></summary>
+            <div class="story-detail"><div><small>User outcome</small><p>Continue the search when the current results do not fully meet the need.</p></div><div><small>Observed on the page</small><p>Nearby cities, related practice areas, resources, transparency content, and attorney insights.</p></div><div><small>Minimum delivery behavior</small><p>Provide valid, relevant destinations that remain distinct from the primary results.</p></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-grid" id="plan">
+      <p class="section-label">04 / WORK PLAN</p>
+      <div class="section-content">
+        <div class="section-heading-row"><h2>Delivery roadmap</h2><p>Evidence-based sequencing, from discovery to stable ownership.</p></div>
+        <div class="phase-list">
+          <article class="phase"><span class="phase-number">01</span><h3>Discovery & alignment</h3><div><small>Purpose</small><p>Confirm scope, decision rights, business rules, services, dependencies, risks, and open questions.</p></div><div><small>Exit evidence</small><p>Approved scope, maps, logs, initial backlog, architecture view, and ROM estimate.</p></div></article>
+          <article class="phase"><span class="phase-number">02</span><h3>Vertical slice</h3><div><small>Purpose</small><p>Refine the highest-value journey and prove one thin end-to-end flow using existing services.</p></div><div><small>Exit evidence</small><p>Working directory-to-profile or contact flow with analytics and test evidence.</p></div></article>
+          <article class="phase"><span class="phase-number">03</span><h3>Core directory</h3><div><small>Purpose</small><p>Deliver context, eligible results, cards, sorting, pagination, and empty/error behavior.</p></div><div><small>Exit evidence</small><p>Accepted core stories, regression coverage, and updated operational documentation.</p></div></article>
+          <article class="phase"><span class="phase-number">04</span><h3>Engagement</h3><div><small>Purpose</small><p>Add approved profile navigation, saving, contact actions, and related content.</p></div><div><small>Exit evidence</small><p>Accepted engagement stories and validated integrations.</p></div></article>
+          <article class="phase"><span class="phase-number">05</span><h3>Trust & readiness</h3><div><small>Purpose</small><p>Confirm disclosures, ratings, accessibility, SEO, privacy, security, performance, monitoring, and rollback.</p></div><div><small>Exit evidence</small><p>Production-readiness review with documented go/no-go evidence.</p></div></article>
+          <article class="phase"><span class="phase-number">06</span><h3>Controlled launch</h3><div><small>Purpose</small><p>Release progressively, compare guardrails with baselines, resolve issues, and capture learning.</p></div><div><small>Exit evidence</small><p>Stable production behavior, hypercare exit, ownership transition, and follow-up backlog.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-grid" id="readiness">
+      <p class="section-label">05 / READINESS</p>
+      <div class="section-content readiness-grid">
+        <div><p class="mini-label">DEFINITION OF READY</p><h2>Ready to commit</h2><p>The user outcome and scope are understood; acceptance criteria, design, content, dependencies, owners, analytics, and cross-cutting needs are defined; no open question blocks implementation.</p></div>
+        <div><p class="mini-label">DEFINITION OF DONE</p><h2>Ready to operate</h2><p>Acceptance criteria are demonstrated; code, tests, integrations, analytics, error behavior, quality checks, documentation, monitoring, and Product acceptance are complete.</p></div>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <p class="section-label">06 / MEASUREMENT</p>
+      <div class="section-content">
+        <div class="section-heading-row"><h2>Measure after baselining</h2><p>Targets follow evidence; they are not invented for the plan.</p></div>
+        <div class="metric-list">
+          <div class="metric"><span>01</span><strong>Consumer journey</strong><p>Result interaction, profile navigation, save, contact start, and contact completion.</p></div>
+          <div class="metric"><span>02</span><strong>Result quality</strong><p>Empty-result rate, refinement, return-to-results, and ranking relevance.</p></div>
+          <div class="metric"><span>03</span><strong>Trust & usability</strong><p>Disclosure clarity, rating comprehension, accessibility defects, and complaints.</p></div>
+          <div class="metric"><span>04</span><strong>Technical health</strong><p>Availability, error rate, latency, page experience, and integration failures.</p></div>
+          <div class="metric"><span>05</span><strong>SEO health</strong><p>Crawlability, canonical behavior, indexed coverage, and organic traffic.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><span>TPM CASE STUDY</span><strong>Rafael Gallardo</strong></div>
+    <p>Source: observable behavior from the Avvo El Segundo, CA Business Lawyers directory page. Private systems and proprietary rules remain outside the asserted scope.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</body>
+</html>
