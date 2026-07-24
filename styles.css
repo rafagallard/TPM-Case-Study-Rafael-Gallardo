@@ -52,7 +52,8 @@ nav a:hover, nav a:focus-visible, .text-action:hover, .text-action:focus-visible
 .story-owner { text-align: right; }
 .story-toggle { color: var(--accent); font-size: 24px; font-weight: 300; text-align: right; transition: transform 180ms ease; }
 .story[open] .story-toggle { transform: rotate(45deg); }
-.story-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; padding: 8px 0 38px 114px; }
+.story-detail { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 42px; padding: 8px 0 42px 114px; }
+.story-statement { grid-column: 1 / -1; max-width: 920px; margin: 0 0 8px; color: var(--ink); font-size: clamp(17px, 1.6vw, 22px); font-style: italic; line-height: 1.5; }
 .story-detail p, .phase p, .metric p { margin: 9px 0 0; color: #b7b7b1; font-size: 14px; line-height: 1.6; }
 
 .phase { display: grid; grid-template-columns: 60px .8fr 1fr 1fr; gap: 28px; padding: 28px 0 42px; border-top: 1px solid var(--line); }
@@ -80,7 +81,8 @@ footer a { font-size: 12px; }
   .section-heading-row p { text-align: left; }
   .story summary { grid-template-columns: 70px 1fr 24px; }
   .story-owner { display: none; }
-  .story-detail { grid-template-columns: 1fr; padding-left: 94px; }
+  .story-detail { grid-template-columns: 1fr; gap: 24px; padding-left: 94px; }
+  .story-statement { grid-column: auto; }
   .phase { grid-template-columns: 42px 1fr; }
   .phase > div { grid-column: 2; }
   footer { grid-template-columns: 1fr; align-items: start; }
