@@ -45,11 +45,10 @@ nav a:hover, nav a:focus-visible, .text-action:hover, .text-action:focus-visible
 .assumption-list p { max-width: 900px; margin: 0; font-size: clamp(18px, 2vw, 27px); line-height: 1.35; }
 
 .story { border-top: 1px solid var(--line); }
-.story summary { display: grid; grid-template-columns: 90px 1fr 180px 24px; gap: 24px; align-items: center; padding: 25px 0; cursor: pointer; list-style: none; }
+.story summary { display: grid; grid-template-columns: 90px 1fr 24px; gap: 24px; align-items: center; padding: 25px 0; cursor: pointer; list-style: none; }
 .story summary::-webkit-details-marker { display: none; }
-.story-number, .story-owner, .story-detail small, .phase small { color: var(--muted); font-family: "Courier New", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.story-number, .story-detail small, .phase small { color: var(--muted); font-family: "Courier New", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 .story-title { font-size: clamp(19px, 2vw, 27px); }
-.story-owner { text-align: right; }
 .story-toggle { color: var(--accent); font-size: 24px; font-weight: 300; text-align: right; transition: transform 180ms ease; }
 .story[open] .story-toggle { transform: rotate(45deg); }
 .story-detail { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 42px; padding: 8px 0 42px 114px; }
@@ -80,7 +79,6 @@ footer a { font-size: 12px; }
   .section-heading-row { align-items: start; flex-direction: column; gap: 18px; }
   .section-heading-row p { text-align: left; }
   .story summary { grid-template-columns: 70px 1fr 24px; }
-  .story-owner { display: none; }
   .story-detail { grid-template-columns: 1fr; gap: 24px; padding-left: 94px; }
   .story-statement { grid-column: auto; }
   .phase { grid-template-columns: 42px 1fr; }
